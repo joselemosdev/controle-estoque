@@ -1,4 +1,4 @@
-package com.lemos.controle_estoque.Controller;
+package com.lemos.controle_estoque.controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
