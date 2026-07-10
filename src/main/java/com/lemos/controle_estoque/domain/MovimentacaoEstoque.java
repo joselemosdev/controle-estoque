@@ -1,4 +1,4 @@
-package com.lemos.controle_estoque.Domain;
+package com.lemos.controle_estoque.domain;
 
 
 import jakarta.persistence.Entity;

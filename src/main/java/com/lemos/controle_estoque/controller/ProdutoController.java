@@ -1,15 +1,16 @@
-package com.lemos.controle_estoque.Controller;
+package com.lemos.controle_estoque.controller;
+
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/categoria")
-public class CategoriaController {
+@RequestMapping("/produto")
+public class ProdutoController {
 
     @GetMapping("/{id}")
-    public String getCategoria(){
-        return "Endpoint de categoria funcionando";
+    private String getProduto(){
+        return "endpoint de produto funciona";
     }
 }

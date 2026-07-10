@@ -1,7 +1,7 @@
-package com.lemos.controle_estoque.Repository;
+package com.lemos.controle_estoque.repository;
 
 
-import com.lemos.controle_estoque.Domain.Fornecedor;
+import com.lemos.controle_estoque.domain.Fornecedor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

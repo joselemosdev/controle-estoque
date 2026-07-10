@@ -1,4 +1,4 @@
-package com.lemos.controle_estoque.Service;
+package com.lemos.controle_estoque.service;
 
 
 import org.springframework.stereotype.Service;
