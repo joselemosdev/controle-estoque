@@ -25,12 +25,13 @@ public abstract class CompleteCrudRepository<T> {
     }
 
     @PostMapping
-    public T save(@RequestParam("entity") T entity){
+    public T save(@RequestBody T entity){
         return this.repository.save(entity);
     }
 
+
     @DeleteMapping()
-    public void delete(@RequestParam("entity") T entity){
+    public void delete(@RequestBody T entity){
         this.repository.delete(entity);
     }
 

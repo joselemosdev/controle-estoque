@@ -3,11 +3,9 @@ package com.lemos.controle_estoque.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.Data;
 import lombok.Getter;
-import org.springframework.data.auditing.DateTimeProvider;
+import org.hibernate.annotations.UuidGenerator;
 
-import java.sql.Date;
 import java.util.UUID;
 
 @Getter
@@ -15,6 +13,7 @@ import java.util.UUID;
 public class Categoria {
 
     @Id
+    @UuidGenerator
     private UUID id;
 
     private String nome;
