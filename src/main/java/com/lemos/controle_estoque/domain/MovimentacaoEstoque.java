@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -15,6 +16,7 @@ import java.util.UUID;
 public class MovimentacaoEstoque {
 
     @Id
+    @UuidGenerator
     private UUID id;
 
     private String tipo;

@@ -3,6 +3,7 @@ package com.lemos.controle_estoque.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.util.UUID;
 
@@ -11,6 +12,7 @@ import java.util.UUID;
 public class Produto {
 
     @Id
+    @UuidGenerator
     private UUID id;
 
     private String nome;
