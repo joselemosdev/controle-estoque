@@ -1,5 +1,7 @@
+create schema if not exists geral;
+
 create table if not exists geral.fornecedor(
-	id uuid not null PRIMARY KEY DEFAULT uuidv7(),
+	id uuid not null PRIMARY KEY DEFAULT gen_random_uuid(),
 	nome text,
 	cnpj text,
 	telefone text,
@@ -7,13 +9,13 @@ create table if not exists geral.fornecedor(
 );
 
 create table if not exists geral.categoria(
-	id uuid not null primary key default uuidv7(),
+	id uuid not null primary key default gen_random_uuid(),
 	nome text,
 	descricao text
 );
 
 create table if not exists geral.produto(
-	id uuid not null primary key default uuidv7(),
+	id uuid not null primary key default gen_random_uuid(),
 	nome text,
 	descricao text,
 	valor float,
@@ -31,7 +33,7 @@ create index if not exists idx_produto_categoria on geral.produto(categoria_id);
 create index if not exists idx_produto_fornecedor on geral.produto(fornecedor_id);
 
 create table if not exists geral.movimentacao_estoque(
-	id uuid not null primary key default uuidv7(),
+	id uuid not null primary key default gen_random_uuid(),
 	tipo text,
 	quantidade int,
 	data timestamp,
