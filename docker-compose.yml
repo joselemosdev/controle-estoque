@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres-controle-estoque
+    environment:
+      POSTGRES_DB: controle_estoque
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: controle-estoque-api
+
+    depends_on:
+      - postgres
+
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/controle_estoque
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_DATASOURCE_DEFAULT_SCHEMA: geral
+volumes:
+  postgres_data:
