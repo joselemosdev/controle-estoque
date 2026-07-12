@@ -1,16 +1,18 @@
 package com.lemos.controle_estoque.controller;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
+import com.lemos.controle_estoque.domain.Produto;
+import com.lemos.controle_estoque.repository.ProdutoRepository;
+import com.lemos.controle_estoque.repository.CompleteCrudRepository;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/produto")
-public class ProdutoController {
+public class ProdutoController extends CompleteCrudRepository<Produto> {
 
-    @GetMapping("/{id}")
-    private String getProduto(){
-        return "endpoint de produto funciona";
+    public ProdutoController(ProdutoRepository produtoRepository){
+        super(produtoRepository);
     }
+
 }
