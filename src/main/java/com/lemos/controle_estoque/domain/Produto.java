@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
@@ -17,16 +18,16 @@ public class Produto {
 
     private String nome;
     private String descricao;
-    private float valor;
+    private BigDecimal valor;
 
     @Column(name = "codigo_barras")
     private String codigoBarras;
 
     @Column(name = "preco_compra")
-    private float precoCompra;
+    private BigDecimal precoCompra;
 
     @Column(name = "preco_venda")
-    private float precoVenda;
+    private BigDecimal precoVenda;
 
     @Column(name = "quantidade_estoque")
     private int quantidadeEstoque;

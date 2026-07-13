@@ -8,7 +8,7 @@ import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import org.hibernate.annotations.UuidGenerator;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -23,7 +23,7 @@ public class MovimentacaoEstoque {
 
     private int quantidade;
 
-    private Timestamp data;
+    private LocalDateTime data;
 
     private String observacao;
 
