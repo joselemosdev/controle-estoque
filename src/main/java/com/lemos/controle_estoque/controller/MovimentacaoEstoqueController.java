@@ -2,17 +2,16 @@ package com.lemos.controle_estoque.controller;
 
 
 import com.lemos.controle_estoque.domain.MovimentacaoEstoque;
-import com.lemos.controle_estoque.repository.MovimentoEstoqueRepository;
-import com.lemos.controle_estoque.repository.CompleteCrudRepository;
+import com.lemos.controle_estoque.repository.MovimentacaoEstoqueRepository;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/movimentacao-estoque")
-public class MovimentacaoEstoqueController extends CompleteCrudRepository<MovimentacaoEstoque> {
+public class MovimentacaoEstoqueController extends CompleteCrudController<MovimentacaoEstoque> {
 
-    public MovimentacaoEstoqueController(MovimentoEstoqueRepository movimentoEstoqueRepository){
-        super(movimentoEstoqueRepository);
+    public MovimentacaoEstoqueController(MovimentacaoEstoqueRepository movimentacaoEstoqueRepository){
+        super(movimentacaoEstoqueRepository);
     }
 }
 
