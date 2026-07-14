@@ -1,29 +1,57 @@
+version: "3.9"
+
 services:
+
   postgres:
     image: postgres:17
     container_name: postgres-controle-estoque
+
+    restart: always
+
     environment:
       POSTGRES_DB: controle_estoque
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+
     ports:
       - "5432:5432"
+
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  app:
-    build: .
-    container_name: controle-estoque-api
+  backend:
+    build:
+      context: ./backend
+
+    container_name: api
 
     depends_on:
       - postgres
 
-    ports:
-      - "8080:8080"
+    restart: always
+
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/controle_estoque
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
       SPRING_DATASOURCE_DEFAULT_SCHEMA: geral
+
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build:
+      context: ./frontend
+
+    container_name: frontend-angular-docker
+
+    depends_on:
+      - backend
+
+    restart: always
+
+    ports:
+      - "4200:80"
+
 volumes:
   postgres_data:
