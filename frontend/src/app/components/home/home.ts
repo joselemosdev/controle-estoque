@@ -1,37 +1,43 @@
-import { Component, inject, OnInit  } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef  } from '@angular/core';
 import { Fornecedores } from '../fornecedores/fornecedores';
 import { CommonModule } from '@angular/common';
 import { ListView } from '../list-view/list-view';
 import { Service } from '../../service';
 import { ProdutoTipo } from '../../domains/produto';
-import { empty, Observable } from 'rxjs';
+import { empty, firstValueFrom, Observable } from 'rxjs';
+import { FornecedorTipo } from '../../domains/fornecedor';
+import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
 
 @Component({
   selector: 'app-home',
-  imports: [ListView],
+  imports: [],
+  standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {
-  public produtos : Observable<ProdutoTipo[]> = new Observable<ProdutoTipo[]>;  
+export class Home implements OnInit {
 
+  fornecedores :  FornecedorTipo[] = [];
+  
   constructor(
+    private cdr: ChangeDetectorRef,
     private service: Service
   ){}
 
-  ngOnInit(): void {
-    console.log("On init!")
-    this.loadProdutos();
-    console.log(this.produtos)
+  async ngOnInit() {
+    this.loadFornecedores();
   }
 
-  public loadProdutos(){
-    console.log('load')
-    this.produtos = this.service.getProdutos();
-    this.produtos.forEach((item) => {
-      console.log("ois")
-      console.log(item.toString());
-    })
+  public loadFornecedores(): void{
+    this.service.getFornecedores().subscribe({
+      next: fornecedores => {
+        this.fornecedores = fornecedores;
+        // this.cdr.detectChanges();
+      },
+      error : erro => {
+        console.log(erro);
+      }
+    });
   }
 
 }
