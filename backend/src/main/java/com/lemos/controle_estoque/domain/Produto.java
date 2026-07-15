@@ -12,6 +12,7 @@ import java.util.UUID;
 @Data
 public class Produto {
 
+
     @Id
     @UuidGenerator
     private UUID id;
@@ -37,7 +38,7 @@ public class Produto {
 
     @ManyToOne
     @JoinColumn(name = "categoria_id")
-    private Categ   oria categoria;
+    private Categoria categoria;
 
     @ManyToOne
     @JoinColumn(name = "fornecedor_id")
