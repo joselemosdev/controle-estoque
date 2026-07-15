@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78f3853c-e9f2-4cb0-9a0d-f2157284734f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/lemos/controle_estoque/domain/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/lemos/controle_estoque/domain/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/home/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/home/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/home/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/home/home.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/home/home.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +60,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Spring Boot.ControleEstoqueApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "#6__add__front",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/workspace/controle-estoque",
     "node.js.detected.package.eslint": "true",
@@ -74,6 +68,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
@@ -110,6 +107,7 @@
       <workItem from="1783713228109" duration="230000" />
       <workItem from="1783970543835" duration="787000" />
       <workItem from="1784047977732" duration="3901000" />
+      <workItem from="1784118585715" duration="71000" />
     </task>
     <servers />
   </component>
