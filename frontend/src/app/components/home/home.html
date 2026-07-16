@@ -1,6 +1,10 @@
-<div class="home-container">
-    @for (fornecedor of fornecedores; track fornecedor.nome){
-        <div>FORNECEDORES</div>
-        <div>{{fornecedor.nome}}</div>
-    }
+<div  class="home-container">
+    <div class="options-container center">
+        <button (click)="openFornecedores()" class="option center"><i>Fornecedores</i></button>
+        <button (click)="openCategorias()" class="option center"><i>Categorias</i></button>
+        <button (click)="openProdutos()" class="option center"><i>Produtos</i></button>
+        <button (click)="openMovimentacaoHistorico()" class="option center"><i>Histórico</i></button>
+    </div>
+
+    <app-list-view [option]="selectedOption" [items]="objectsList"></app-list-view>
 </div>

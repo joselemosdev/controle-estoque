@@ -12,6 +12,7 @@ import java.util.UUID;
 @Data
 public class Produto {
 
+
     @Id
     @UuidGenerator
     private UUID id;
