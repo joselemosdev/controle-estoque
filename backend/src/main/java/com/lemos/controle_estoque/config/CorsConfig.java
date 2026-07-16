@@ -17,10 +17,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins(
-                                "http://localhost:4200",
-                                "https://controle-estoque-lemosdev.netlify.app"
-                        )
+                        .allowedOrigins("http://localhost:4200", "https://controle-estoque-lemosdev.netlify.app")
                         .allowedMethods("*")
                         .allowedHeaders("*")
                         .allowCredentials(true);
