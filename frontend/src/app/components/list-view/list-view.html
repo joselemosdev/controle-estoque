@@ -1,23 +1,23 @@
 <div class="list-view-container">
-    @for (item of items(); track item.id) {
+    @for (item of items() ; track item.id) {
         <div class="row-list">
             @if (option() == 'Fornecedores') {
-                <span>ID: {{item.id}}</span>
-                <span>Nome: {{item.nome}}</span>
-                <span>CNPJ: {{item.cnpj}}</span>
+                <span><strong>ID: </strong>{{item.id}}</span>
+                <span><strong>Nome: </strong>{{item.nome}}</span>
+                <span><strong>CNPJ: </strong>{{item.cnpj}}</span>
             } @else if(option() == 'Categorias'){
-                <span>ID: {{item.id}}</span>
-                <span>Título: {{item.nome}}</span>
-                <span>Descrição: {{item.descricao}}</span>
+                <span><strong>ID: </strong>{{item.id}}</span>
+                <span><strong>Título: </strong>{{item.nome}}</span>
+                <span><strong>Descrição: </strong>{{item.descricao}}</span>
             } @else if (option() == 'Produtos') {
-                <span>ID: {{item.id}}</span>
-                <span>Nome: {{item.nome}}</span>
-                <span>Descrição: {{item.descricao}}</span>
+                <span><strong>ID: </strong>{{item.id}}</span>
+                <span><strong>Nome: </strong>{{item.nome}}</span>
+                <span><strong>Descrição: </strong>{{item.descricao}}</span>
             } @else {
-                <span>ID: {{item.id}}</span>
-                <span>Tipo: {{item.tipo}}</span>
-                <span>Quantidade: {{item.quantidade}}</span>
-                <span>Produto: {{item.produto ?? "Não Informado"}}</span>
+                <span><strong>ID: </strong>{{item.id}}</span>
+                <span><strong>Tipo: </strong>{{item.tipo}}</span>
+                <span><strong>Quantidade: </strong>{{item.quantidade}}</span>
+                <span><strong>Produto: </strong>{{item.produto ?? "Não Informado"}}</span>
             }   
         </div>
     }

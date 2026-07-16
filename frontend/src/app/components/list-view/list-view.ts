@@ -1,5 +1,4 @@
 import { Component, Input, input } from '@angular/core';
-import { NgClass } from "../../../../node_modules/@angular/common/types/_common_module-chunk";
 
 @Component({
   selector: 'app-list-view',
@@ -10,6 +9,10 @@ import { NgClass } from "../../../../node_modules/@angular/common/types/_common_
 export class ListView {
 
   constructor(){}
+
+  public loga(){
+    console.log(this.items.length)
+  }
   option = input<string>();
   items = input<any[]>();
 }
