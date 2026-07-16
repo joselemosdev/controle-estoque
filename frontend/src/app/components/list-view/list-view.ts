@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-list-view',
@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './list-view.html',
   styleUrl: './list-view.css',
 })
-export class ListView {}
+export class ListView {
+
+  constructor(){}
+
+  option = input<string>();
+  items = input<any[]>();
+}
