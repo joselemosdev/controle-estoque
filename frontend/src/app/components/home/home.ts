@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef  } from '@angular/core';
 import { Fornecedores } from '../fornecedores/fornecedores';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { ListView } from '../list-view/list-view';
 import { Service } from '../../service';
 import { ProdutoTipo } from '../../domains/produto';
@@ -12,7 +12,7 @@ import { MovimentacaoEstoqueTipo } from '../../domains/movimentacaoEstoque';
 
 @Component({
   selector: 'app-home',
-  imports: [ListView],
+  imports: [ListView, NgClass],
   standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.css',
@@ -25,7 +25,6 @@ export class Home implements OnInit {
   // movimentacaoEstoque : MovimentacaoEstoqueTipo[] = [];
   selectedOption : string = '';
   objectsList : any[] = [];
-
   constructor(
     private cdr: ChangeDetectorRef,
     private service: Service
@@ -95,19 +94,19 @@ export class Home implements OnInit {
   }
 
   public openFornecedores() : void {
-    this.loadFornecedores();
+    this.selectedOption != 'Fornecedores' ? this.loadFornecedores() : null;
   }
 
   public openCategorias() : void{
-    this.loadCategorias();
+    this.selectedOption != 'Categorias' ? this.loadCategorias() : null;
   }
 
    public openProdutos() : void {
-     this.loadProdutos();
+     this.selectedOption != 'Produtos' ? this.loadProdutos() : null;
   }
 
    public openMovimentacaoHistorico() : void {
-     this.loadMovimentacaoEstoque();
+    this.selectedOption != 'Estoque - Histórico de Movimentações' ?  this.loadMovimentacaoEstoque() : null;
   }
 
 }
