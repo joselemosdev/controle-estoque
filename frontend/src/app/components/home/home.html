@@ -1,9 +1,9 @@
 <div  class="home-container">
     <div class="options-container center">
-        <button (click)="openFornecedores()" class="option center"><i>Fornecedores</i></button>
-        <button (click)="openCategorias()" class="option center"><i>Categorias</i></button>
-        <button (click)="openProdutos()" class="option center"><i>Produtos</i></button>
-        <button (click)="openMovimentacaoHistorico()" class="option center"><i>Histórico</i></button>
+        <button (click)="openFornecedores()" [ngClass]="{'activeOption' : selectedOption == 'Fornecedores', 'option center' : selectedOption != 'Fornecedores'}"><i>Fornecedores</i></button>
+        <button (click)="openCategorias()" [ngClass]="{'activeOption' : selectedOption == 'Categorias', 'option center' : selectedOption != 'Categorias'}"><i>Categorias</i></button>
+        <button (click)="openProdutos()" [ngClass]="{'activeOption' : selectedOption == 'Produtos', 'option center' : selectedOption != 'Produtos'}"><i>Produtos</i></button>
+        <button (click)="openMovimentacaoHistorico()" [ngClass]="{'activeOption' : selectedOption == 'Estoque - Histórico de Movimentações', 'option center' : selectedOption != 'Estoque - Histórico de Movimentações'}"><i>Histórico</i></button>
     </div>
 
     <app-list-view [option]="selectedOption" [items]="objectsList"></app-list-view>
