@@ -10,6 +10,8 @@ RUN npm run build
 
 FROM nginx:alpine
 
+ENV API_URL=https://controle-estoque-s6yq.onrender.com
+
 COPY --from=builder app/dist/controle-estoque/browser /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 4200

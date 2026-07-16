@@ -6,6 +6,8 @@ import { ThisReceiver } from "@angular/compiler";
 import { FornecedorTipo } from "./domains/fornecedor";
 import { CategoriaTipo } from "./domains/categoria";
 import { MovimentacaoEstoqueTipo } from "./domains/movimentacaoEstoque";
+import { appConfig } from "./app.config";
+import { environment } from "../environment";
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +17,7 @@ export class Service{
 
     private http = inject(HttpClient);
 
-    private readonly URL = 'http://localhost:8080/';
+    private readonly URL = environment.apiUrl;
     private readonly produtoEndpoint = 'produto';
     private readonly fornecedorEndpoint = 'fornecedor';
     private readonly categoriaEndpoint = 'categoria';
@@ -23,6 +25,7 @@ export class Service{
 
 
     getFornecedores(): Observable<FornecedorTipo[]> {
+        console.log("URL: " + this.URL);
         return this.http.get<FornecedorTipo[]>(this.URL + this.fornecedorEndpoint); 
     }
 
