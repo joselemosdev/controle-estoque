@@ -31,9 +31,9 @@ services:
     restart: always
 
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/controle_estoque
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_DATASOURCE_URL: jdbc:postgresql://dpg-d9cg43jbc2fs73bv7ep0-a:5432/controle_estoque
+      SPRING_DATASOURCE_USERNAME: controle_estoque_mswc_user
+      SPRING_DATASOURCE_PASSWORD: fb58ypaMzKHRQmJ86dSRakaFFIeKOFjl
       SPRING_DATASOURCE_DEFAULT_SCHEMA: geral
 
     ports:
