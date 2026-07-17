@@ -11,16 +11,5 @@ export class ListView {
 
   constructor(
      protected dataComponentService : DataComponentService,
-  ){}
-
-//  get getSelectedOption() {
-//    console.log(this.dataComponentService.selectedOption);
-//   return this.dataComponentService.selectedOption;
-//  } 
-//  get getOjbectsList(){
-//    console.log(this.dataComponentService.objectsList);
-
-  // return this.dataComponentService.objectsList;
-//  }
-  
+  ){}  
 }
