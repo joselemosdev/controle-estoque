@@ -1,20 +1,34 @@
-import { ChangeDetectorRef, Component, Inject } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, NgModule } from '@angular/core';
 import { DataComponentService } from '../dataComponentService';
 import { NgClass } from '@angular/common';
+import { MatIcon } from '@angular/material/icon'; // <-- Mude para MatIcon (sem Module)
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faPlusCircle  } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
-  imports: [NgClass],
+  standalone: true,
+  imports: [NgClass, FontAwesomeModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar {
+
+  faPlusCircle = faPlusCircle;
+
   constructor(
     private dataComponentService : DataComponentService,
+    
   ){}
-
+    
    get selectedOption(){
     return this.dataComponentService.selectedOption();
+   }
+
+   public openLancamentos(){
+    this.dataComponentService.selectedOption.set('Lançamentos');
+    this.selectedOption != 'Lançamentos' ?  this.dataComponentService.loadMovimentacaoEstoque() : null;
+    
    }
   
    public openFornecedores(){

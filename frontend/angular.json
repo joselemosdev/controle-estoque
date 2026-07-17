@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "styles":[
+              "src/styles.css"
+            ],
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -24,9 +27,6 @@
                 "glob": "**/*",
                 "input": "public"
               }
-            ],
-            "styles": [
-              "src/styles.css"
             ]
           },
           "configurations": {
@@ -48,8 +48,8 @@
             "development": {
               "fileReplacements": [
                 {
-                  "replace" :"src/environment.ts",
-                  "with" : "src/environment.development.ts"
+                  "replace": "src/environment.ts",
+                  "with": "src/environment.development.ts"
                 }
               ],
               "optimization": false,

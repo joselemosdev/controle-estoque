@@ -7,11 +7,13 @@ import { Service } from "../service";
 
 export class DataComponentService{
     
-    constructor(){}
+    constructor(){
+        this.loadMovimentacaoEstoque();
+    }
 
     public service = inject(Service);
 
-    selectedOption = signal('');
+    selectedOption = signal('Lançamentos');
     objectsList = signal<any[]>([]);
 
     public loadFornecedores(){

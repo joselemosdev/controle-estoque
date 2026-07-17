@@ -13,7 +13,6 @@ import { DataComponentService } from '../dataComponentService';
 export class Home implements OnInit {
 
   constructor(
-    private cdr: ChangeDetectorRef,
     private dataComponentService : DataComponentService
   ){}
 
@@ -38,7 +37,7 @@ export class Home implements OnInit {
   }
 
   public selectedOption(){
-    return this.dataComponentService.selectedOption;
+    return this.dataComponentService.selectedOption();
   }
 
   public objectsList(){
