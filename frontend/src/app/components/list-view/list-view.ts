@@ -1,4 +1,5 @@
 import { Component, Input, input } from '@angular/core';
+import { DataComponentService } from '../dataComponentService';
 
 @Component({
   selector: 'app-list-view',
@@ -8,11 +9,18 @@ import { Component, Input, input } from '@angular/core';
 })
 export class ListView {
 
-  constructor(){}
+  constructor(
+     protected dataComponentService : DataComponentService,
+  ){}
 
-  public loga(){
-    console.log(this.items.length)
-  }
-  option = input<string>();
-  items = input<any[]>();
+//  get getSelectedOption() {
+//    console.log(this.dataComponentService.selectedOption);
+//   return this.dataComponentService.selectedOption;
+//  } 
+//  get getOjbectsList(){
+//    console.log(this.dataComponentService.objectsList);
+
+  // return this.dataComponentService.objectsList;
+//  }
+  
 }

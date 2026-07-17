@@ -1,1 +1,9 @@
-<div class="navbar-container"></div>
+<div class="navbar-container">
+    <h2>Controle Estoque</h2>
+    <div class="options-container">
+        <button (click)="openFornecedores()" [ngClass]="{'activeOption' : selectedOption == 'Fornecedores', 'option center' : selectedOption != 'Fornecedores'}"><i>Fornecedores</i></button>
+        <button (click)="openCategorias()" [ngClass]="{'activeOption' : selectedOption == 'Categorias', 'option center' : selectedOption != 'Categorias'}"><i>Categorias</i></button>
+        <button (click)="openProdutos()" [ngClass]="{'activeOption' : selectedOption == 'Produtos', 'option center' : selectedOption != 'Produtos'}"><i>Produtos</i></button>
+        <button (click)="openMovimentacaoHistorico()" [ngClass]="{'activeOption' : selectedOption == 'Estoque - Histórico de Movimentações', 'option center' : selectedOption != 'Estoque - Histórico de Movimentações'}"><i>Histórico</i></button>
+    </div>
+</div>

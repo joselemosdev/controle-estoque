@@ -1,19 +1,19 @@
 <div class="list-view-container">
-    @for (item of items() ; track item.id) {
+    @for (item of dataComponentService.objectsList() ; track item.id) {
         <div class="row-list">
-            @if (option() == 'Fornecedores') {
+            @if (dataComponentService.selectedOption() == 'Fornecedores') {
                 <span><strong>ID: </strong>{{item.id}}</span>
                 <span><strong>Nome: </strong>{{item.nome}}</span>
                 <span><strong>CNPJ: </strong>{{item.cnpj}}</span>
-            } @else if(option() == 'Categorias'){
+            } @else if(dataComponentService.selectedOption() == 'Categorias'){
                 <span><strong>ID: </strong>{{item.id}}</span>
                 <span><strong>Título: </strong>{{item.nome}}</span>
                 <span><strong>Descrição: </strong>{{item.descricao}}</span>
-            } @else if (option() == 'Produtos') {
+            } @else if (dataComponentService.selectedOption() == 'Produtos') {
                 <span><strong>ID: </strong>{{item.id}}</span>
                 <span><strong>Nome: </strong>{{item.nome}}</span>
                 <span><strong>Descrição: </strong>{{item.descricao}}</span>
-            } @else {
+            } @else if (dataComponentService.selectedOption() == 'Estoque - Histórico de Movimentações'){
                 <span><strong>ID: </strong>{{item.id}}</span>
                 <span><strong>Tipo: </strong>{{item.tipo}}</span>
                 <span><strong>Quantidade: </strong>{{item.quantidade}}</span>

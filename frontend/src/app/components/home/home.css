@@ -9,7 +9,7 @@
     height: 97vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: rgb(29, 29, 32);
 
