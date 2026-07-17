@@ -1,5 +1,6 @@
 import { inject, Injectable, signal } from "@angular/core";
 import { Service } from "../service";
+import { environment } from "../../environment";
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class DataComponentService{
 
     public loadFornecedores(){
         
-        this.service.doGet('fornecedor').subscribe({
+        this.service.doGet(environment.fornecedorEndpoint).subscribe({
             next: fornecedores => {
                 this.objectsList.set(fornecedores);
             },
@@ -29,7 +30,7 @@ export class DataComponentService{
     };
 
     public loadCategorias(){
-        this.service.doGet('categoria').subscribe({
+        this.service.doGet(environment.categoriaEndpoint).subscribe({
             next: categorias => {
                 this.objectsList.set(categorias);
             },
@@ -40,7 +41,7 @@ export class DataComponentService{
     };
 
     public loadProdutos(){
-        this.service.doGet('produto').subscribe({
+        this.service.doGet(environment.produtoEndpoint).subscribe({
             next: produtos => {
                 this.objectsList.set(produtos);
             },
@@ -51,7 +52,7 @@ export class DataComponentService{
     }
 
     public loadMovimentacaoEstoque(){
-        this.service.getMovimentacaoEstoque().subscribe({
+        this.service.doGet(environment.movimentacaoEstoqueEndpoint).subscribe({
             next: movimentacoes => {
                 this.objectsList.set(movimentacoes);
             },

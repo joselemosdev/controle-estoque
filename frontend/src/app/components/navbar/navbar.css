@@ -11,8 +11,10 @@
 }
 
 .navbar-container{
+    user-select: none;
     display: flex;
-    height: 8%;
+    height: 10%;
+    min-height: 60px;
     width: 100%;
     align-items: center;
     justify-content: space-around;
@@ -66,4 +68,16 @@
     font-size: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     transition: box-shadow 300ms, color 300ms;
+}
+
+.row-logo{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.imagem{
+    width: 70px;
 }

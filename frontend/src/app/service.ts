@@ -18,30 +18,10 @@ export class Service{
     private http = inject(HttpClient);
 
     private readonly URL = environment.apiUrl;
-    private readonly produtoEndpoint = 'produto';
-    private readonly fornecedorEndpoint = 'fornecedor';
-    private readonly categoriaEndpoint = 'categoria';
-    private readonly movimentacaoEstoqueEndpoint = 'movimentacao-estoque';
 
 
     doGet(endpoint : string) : Observable<any[]>{
         return this.http.get<any[]>(this.URL + endpoint);
     }
 
-    getFornecedores(): Observable<FornecedorTipo[]> {
-        console.log("URL: " + this.URL);
-        return this.http.get<FornecedorTipo[]>(this.URL + this.fornecedorEndpoint); 
-    }
-
-    getCategorias(): Observable<CategoriaTipo[]> {
-        return this.http.get<CategoriaTipo[]>(this.URL + this.categoriaEndpoint);
-    }
-
-    getProdutos(): Observable<ProdutoTipo[]> {
-        return this.http.get<ProdutoTipo[]>(this.URL + this.produtoEndpoint);
-    }
-
-    getMovimentacaoEstoque(): Observable<MovimentacaoEstoqueTipo[]> {
-        return this.http.get<MovimentacaoEstoqueTipo[]>(this.URL + this.movimentacaoEstoqueEndpoint);
-    }
 }
