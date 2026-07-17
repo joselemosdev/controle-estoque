@@ -8,14 +8,12 @@ import { faPlusCircle  } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [NgClass, FontAwesomeModule],
+  imports: [NgClass],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar {
-
-  faPlusCircle = faPlusCircle;
-
+  
   constructor(
     private dataComponentService : DataComponentService,
     

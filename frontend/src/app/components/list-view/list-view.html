@@ -1,4 +1,7 @@
 <div class="list-view-container">
+    <div class="new-row">
+        <Button class="btn-new">Lançar <fa-icon [icon]="faPlusCircle"/></Button>
+    </div>
     @for (item of dataComponentService.objectsList() ; track item.id) {
         <div class="row-list">
             @if (dataComponentService.selectedOption() == 'Fornecedores') {
