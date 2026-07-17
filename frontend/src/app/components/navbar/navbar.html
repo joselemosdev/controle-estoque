@@ -1,5 +1,8 @@
 <div class="navbar-container">
-    <h2>Controle de Estoque</h2>
+    <div class="row-logo">
+        <img class="imagem" src="assets/logo-bg.png" alt="logo">
+        <h2>Painel de Gestão</h2>
+    </div>
     <div class="options-container">
         <button (click)="openLancamentos()" [ngClass]="{'activeOption' : selectedOption == 'Lançamentos', 'option center' : selectedOption != 'Lançamentos'}">
             <i>Lançamentos </i>
