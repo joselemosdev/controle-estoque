@@ -1,5 +1,5 @@
 import { Component, Input, input } from '@angular/core';
-import { NgClass } from "../../../../node_modules/@angular/common/types/_common_module-chunk";
+import { DataComponentService } from '../dataComponentService';
 
 @Component({
   selector: 'app-list-view',
@@ -9,7 +9,7 @@ import { NgClass } from "../../../../node_modules/@angular/common/types/_common_
 })
 export class ListView {
 
-  constructor(){}
-  option = input<string>();
-  items = input<any[]>();
+  constructor(
+     protected dataComponentService : DataComponentService,
+  ){}  
 }

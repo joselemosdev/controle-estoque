@@ -24,6 +24,10 @@ export class Service{
     private readonly movimentacaoEstoqueEndpoint = 'movimentacao-estoque';
 
 
+    doGet(endpoint : string) : Observable<any[]>{
+        return this.http.get<any[]>(this.URL + endpoint);
+    }
+
     getFornecedores(): Observable<FornecedorTipo[]> {
         console.log("URL: " + this.URL);
         return this.http.get<FornecedorTipo[]>(this.URL + this.fornecedorEndpoint); 

@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "styles":[
+              "src/styles.css"
+            ],
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -24,9 +27,6 @@
                 "glob": "**/*",
                 "input": "public"
               }
-            ],
-            "styles": [
-              "src/styles.css"
             ]
           },
           "configurations": {
@@ -46,6 +46,12 @@
               "outputHashing": "all"
             },
             "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environment.ts",
+                  "with": "src/environment.development.ts"
+                }
+              ],
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
@@ -57,12 +63,6 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "fileReplacements" :[
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with" : "src/environments/environment.production.ts"
-                }
-              ],
               "buildTarget": "controle-estoque:build:production"
             },
             "development": {

@@ -1,112 +1,46 @@
 import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef  } from '@angular/core';
-import { Fornecedores } from '../fornecedores/fornecedores';
-import { CommonModule, NgClass } from '@angular/common';
 import { ListView } from '../list-view/list-view';
-import { Service } from '../../service';
-import { ProdutoTipo } from '../../domains/produto';
-import { empty, firstValueFrom, Observable } from 'rxjs';
-import { FornecedorTipo } from '../../domains/fornecedor';
-import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
-import { CategoriaTipo } from '../../domains/categoria';
-import { MovimentacaoEstoqueTipo } from '../../domains/movimentacaoEstoque';
+import { Navbar } from '../navbar/navbar';
+import { DataComponentService } from '../dataComponentService';
 
 @Component({
   selector: 'app-home',
-  imports: [ListView, NgClass],
+  imports: [ListView, Navbar],
   standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home implements OnInit {
 
-  // fornecedores :  FornecedorTipo[] = [];
-  // categorias : CategoriaTipo[] = [];
-  // produtos : ProdutoTipo[] = [];
-  // movimentacaoEstoque : MovimentacaoEstoqueTipo[] = [];
-  selectedOption : string = '';
-  objectsList : any[] = [];
   constructor(
-    private cdr: ChangeDetectorRef,
-    private service: Service
+    private dataComponentService : DataComponentService
   ){}
 
   async ngOnInit() {
   }
 
   public loadFornecedores(): void{
-    this.service.getFornecedores().subscribe({
-      next: fornecedores => {
-        this.objectsList = [];
-        this.objectsList = fornecedores;
-        this.selectedOption = 'Fornecedores';
-
-        this.cdr.detectChanges();
-      },
-      error : erro => {
-        console.log(erro);
-      }
-    });
+    this.dataComponentService.loadFornecedores();
   }
 
-  public loadCategorias() : void {
-    this.service.getCategorias().subscribe({
-      next: categorias => {
-        this.objectsList = [];
-        this.objectsList = categorias;
-        this.selectedOption = 'Categorias';
-        console.log(`Tema: ${this.selectedOption} items: ${this.objectsList}`)
 
-        this.cdr.detectChanges();
-      },
-      error : erro => {
-        console.log(erro);
-      }
-    }) 
+  public loadCategorias() : void {
+   this.dataComponentService.loadCategorias();
   }
 
   public loadProdutos() : void {
-    this.service.getProdutos().subscribe({
-      next: produtos => {
-        this.objectsList = [];
-        this.objectsList = produtos;
-        this.selectedOption = 'Produtos';
-
-        this.cdr.detectChanges();
-      },
-      error : erro => {
-        console.log(erro);
-      }
-    }) 
+    this.dataComponentService.loadProdutos();
   }
 
   public loadMovimentacaoEstoque() : void {
-    this.service.getMovimentacaoEstoque().subscribe({
-      next: movimentacoes => {
-        this.objectsList = [];
-        this.objectsList = movimentacoes;
-        this.selectedOption = 'Estoque - Histórico de Movimentações';
-        this.cdr.detectChanges();
-      },
-      error : erro => {
-        console.log(erro);
-      }
-    }) 
+    this.dataComponentService.loadMovimentacaoEstoque();
   }
 
-  public openFornecedores() : void {
-    this.selectedOption != 'Fornecedores' ? this.loadFornecedores() : null;
+  public selectedOption(){
+    return this.dataComponentService.selectedOption();
   }
 
-  public openCategorias() : void{
-    this.selectedOption != 'Categorias' ? this.loadCategorias() : null;
+  public objectsList(){
+    return this.dataComponentService.objectsList;
   }
-
-   public openProdutos() : void {
-     this.selectedOption != 'Produtos' ? this.loadProdutos() : null;
-  }
-
-   public openMovimentacaoHistorico() : void {
-    this.selectedOption != 'Estoque - Histórico de Movimentações' ?  this.loadMovimentacaoEstoque() : null;
-  }
-
 }
