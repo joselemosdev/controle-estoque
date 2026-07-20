@@ -22,8 +22,6 @@ export class ListView implements OnInit{
   }  
   
   ngOnInit(): void {
-    // this.dataComponentService.loading = false;
-    // this.dataComponentService.loadMovimentacaoEstoque();
   }
 
   adicionar(){

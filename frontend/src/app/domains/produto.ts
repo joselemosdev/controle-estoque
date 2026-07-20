@@ -1,5 +1,7 @@
+import { environment } from "../../environment";
 import { CategoriaTipo } from "./categoria";
 import { FornecedorTipo } from "./fornecedor";
+import { EntityRecord } from "./record";
 
 export class ProdutoTipo {
     constructor(
@@ -17,7 +19,16 @@ export class ProdutoTipo {
     ){}
 
 }
-export const produtoRecord : Record<string, string> = {
-  "titleSingular" : "Produto",
-  "titlePlural" : "Produtos"
+export const produtoRecord : EntityRecord<ProdutoTipo> = {
+
+    titleSingular: "Produto",
+    titlePlural: "Produtos",
+    endpoint: environment.produtoEndpoint,
+    columns : [
+        {field : 'id', label : "ID"},
+        {field : 'nome', label : "Nome"},
+        {field : 'valor', label : "Preço"},
+        {field: 'fornecedor', label: "Fornecedor"},
+        {field : 'quantidadeEstoque', label: "Em estoque"}
+    ],
 }

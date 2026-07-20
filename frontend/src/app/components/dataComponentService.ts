@@ -1,10 +1,11 @@
 import { inject, Injectable, signal } from "@angular/core";
 import { Service } from "../service";
 import { environment } from "../../environment";
+import { EntityRecord } from "../domains/record";
 import { fornecedorRecord } from "../domains/fornecedor";
 import { categoriaRecord } from "../domains/categoria";
 import { produtoRecord } from "../domains/produto";
-import { movimentacaoRecord } from "../domains/movimentacaoEstoque";
+import { movimentacaoEstoqueRecord } from "../domains/movimentacaoEstoque";
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +23,9 @@ export class DataComponentService{
     }
 
     public service = inject(Service);
-    record : Record<string, string> = {};
+
+    record? : EntityRecord<any>;
+
     selectedOption = signal('Lançamentos');
     objectsList = signal<any[]>([]);
 
@@ -69,7 +72,7 @@ export class DataComponentService{
         this.service.doGet(environment.movimentacaoEstoqueEndpoint).subscribe({
             next: movimentacoes => {
                 this.objectsList.set(movimentacoes);
-                this.record = movimentacaoRecord;
+                this.record = movimentacaoEstoqueRecord;
                 this.loading = false;
             },
         error : erro => {

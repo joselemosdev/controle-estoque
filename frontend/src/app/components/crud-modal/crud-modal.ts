@@ -14,8 +14,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 })
 export class CrudModal {
   constructor(){
-    this.title = this.service.record['titleSingular'];
-    console.log(this.title)
+   this.title = this.service.record!.titlePlural.toString();
   }
   faXmark = faXmark;
   dialogRef = inject(DialogRef);
