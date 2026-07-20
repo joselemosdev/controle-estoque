@@ -1,35 +1,33 @@
 <div class="list-view-container">
     @if(dataComponentService.loading){
-        <div><h1>Carregando...</h1></div>
+    <div>
+        <h1>Carregando...</h1>
+    </div>
     } @else {
     <div class="new-row">
-        <Button (click)="adicionar()" class="btn-new">Adicionar <fa-icon [icon]="faPlusCircle"/></Button>
+        <Button (click)="adicionar()" class="btn-new">Adicionar <fa-icon [icon]="faPlusCircle" /></Button>
     </div>
     @for (item of dataComponentService.objectsList() ; track item) {
-        <div class="row-list">
-            @for (column of dataComponentService.record?.columns; track column.field) {
-                    <span><strong>{{column.label}}: </strong>{{item[column.field]}}</span>
-            }
+    <div class="row-list">
+        @for (column of dataComponentService.record?.columns; track column.field) {
+        <span class="item-view">
+            <div class="column-view">
+                <strong>
+                    {{column.label}}:
+                </strong>
+                <i class="field" [title]="`${item[column.field]}`">
+                    {{item[column.field]}}
+                </i>
+            </div>
+            <fa-icon id="copy" [title]="`Copiar ${column.label}`" [icon]="faCopy" />
+        </span>
+        }
+        <div class="controls-container">
+            <fa-icon id="delete" [icon]="faTrashCan" />
+            <fa-icon id="edit" [icon]="faEdit" />
+            <fa-icon id="view" [icon]="faEye" />
         </div>
-
-            <!-- @if (dataComponentService.selectedOption() == 'Fornecedores') {
-                <span><strong>ID: </strong>{{item.id}}</span>
-                <span><strong>Nome: </strong>{{item.nome}}</span>
-                <span><strong>CNPJ: </strong>{{item.cnpj}}</span>
-            } @else if(dataComponentService.selectedOption() == 'Categorias'){
-                <span><strong>ID: </strong>{{item.id}}</span>
-                <span><strong>Título: </strong>{{item.nome}}</span>
-                <span><strong>Descrição: </strong>{{item.descricao}}</span>
-            } @else if (dataComponentService.selectedOption() == 'Produtos') {
-                <span><strong>ID: </strong>{{item.id}}</span>
-                <span><strong>Nome: </strong>{{item.nome}}</span>
-                <span><strong>Descrição: </strong>{{item.descricao}}</span>
-            } @else if (dataComponentService.selectedOption() == 'Lançamentos'){
-                <span><strong>ID: </strong>{{item.id}}</span>
-                <span><strong>Tipo: </strong>{{item.tipo}}</span>
-                <span><strong>Quantidade: </strong>{{item.quantidade}}</span>
-                <span><strong>Produto: </strong>{{item.produto ?? "Não Informado"}}</span>
-            }    -->
+    </div>
     }
-}
+    }
 </div>

@@ -1,6 +1,7 @@
 import { environment } from "../../environment";
 import { CategoriaTipo } from "./categoria";
 import { FornecedorTipo } from "./fornecedor";
+import { ListColumnsType } from "./list-columns";
 import { EntityRecord } from "./record";
 
 export class ProdutoTipo {
@@ -25,10 +26,9 @@ export const produtoRecord : EntityRecord<ProdutoTipo> = {
     titlePlural: "Produtos",
     endpoint: environment.produtoEndpoint,
     columns : [
-        {field : 'id', label : "ID"},
-        {field : 'nome', label : "Nome"},
-        {field : 'valor', label : "Preço"},
-        {field: 'fornecedor', label: "Fornecedor"},
-        {field : 'quantidadeEstoque', label: "Em estoque"}
+        {field : 'id', label : 'ID', type : ListColumnsType.TEXTO},
+        {field : 'nome', label : 'Nome', type: ListColumnsType.TEXTO},
+        {field : 'valor', label : 'Preço', type: ListColumnsType.REAIS},
+        {field : 'quantidadeEstoque', label: 'Em estoque', type: ListColumnsType.NUMERICO}
     ],
 }

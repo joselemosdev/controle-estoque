@@ -62,6 +62,8 @@ export class DataComponentService{
                 this.objectsList.set(produtos);
                 this.record = produtoRecord;
                  this.loading = false;
+                 console.log(this.record)
+
             },
             error : erro => {
                 console.log(erro);
