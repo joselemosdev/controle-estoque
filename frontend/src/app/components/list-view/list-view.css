@@ -1,4 +1,4 @@
-.list-view-container{    
+.list-view-container {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
@@ -11,27 +11,26 @@
     border: 1px solid rgb(139, 139, 139);
 }
 
-.row-list:hover{
+.row-list:hover {
     cursor: pointer;
     background-color: rgb(94, 93, 93);
 }
-.row-list{
+
+.row-list {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
-
+    flex-wrap: nowrap;
+    gap: 50px;
     width: 90%;
     height: 40px;
-
     margin-top: 5px;
     margin-bottom: 5px;
     border: .5px solid rgb(139, 139, 139);
     color: white;
-    font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
-
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
     border-radius: 5px;
     background-color: rgb(65, 65, 65);
@@ -39,7 +38,7 @@
     transition: background-color 150ms;
 }
 
-.new-row{
+.new-row {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -48,22 +47,81 @@
     margin-top: 10px;
 }
 
-.btn-new:active{
+.btn-new:active {
     background-color: rgb(0, 208, 235);
     transition: background-color 100ms;
 }
 
-.btn-new:hover{ 
+.btn-new:hover {
     cursor: pointer;
 }
-.btn-new{
+
+.btn-new {
     border: none;
-    border-radius:5px;
-    height: 50px;
-    width: 10%;
+    border-radius: 5px;
+    height: 45px;
+    width: 100px;
     font-weight: bolder;
     color: white;
     background-color: rgb(0, 173, 196);
-      transition: background-color 500ms;
+    transition: background-color 500ms;
 }
 
+.column-view {
+    background-color: white;
+    color: black;
+    width: fit-content;
+    max-width: 300px;
+    min-width: 100px;
+    height: 100%;
+    padding: 5px;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+}
+
+.item-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    max-width: 350px;
+    min-width: 250px;
+}
+
+.field {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.controls-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    min-width: 60px;
+    width: 100px;
+}
+
+#copy {
+    margin-left: 5px;
+}
+
+#edit:hover {
+    color: rgb(36, 229, 255);
+    transition: color 200ms;
+}
+
+#delete:hover {
+    color: rgb(255, 126, 126);
+    transition: color 200ms;
+}
+
+#view:hover {
+    color: rgb(36, 229, 255);
+    transition: color 200ms;
+}

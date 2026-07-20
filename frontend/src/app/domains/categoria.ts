@@ -3,7 +3,7 @@ import { provideProtractorTestingSupport } from "@angular/platform-browser";
 import { ProdutoTipo } from "./produto";
 import { EntityRecord } from "./record";
 import { environment } from "../../environment";
-import { ListColumns } from "./list-columns";
+import { ListColumns, ListColumnsType } from "./list-columns";
 
 export class CategoriaTipo { 
  
@@ -24,7 +24,7 @@ export const categoriaRecord : EntityRecord<CategoriaTipo> = {
     titlePlural: "Categorias",
     endpoint: environment.categoriaEndpoint,
     columns : [
-        {field : 'id', label : "ID"},
-        {field : 'nome', label : "Nome"}
+        {field : 'id', label : "ID", type: ListColumnsType.TEXTO},
+        {field : 'nome', label : "Nome", type: ListColumnsType.TEXTO}
     ],
 }

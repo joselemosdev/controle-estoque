@@ -6,8 +6,6 @@ export interface EntityRecord<T> {
     titlePlural: string;
 
     endpoint: string;
-
     columns: ListColumns[];
-
 
 }

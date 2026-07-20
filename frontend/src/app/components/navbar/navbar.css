@@ -1,20 +1,21 @@
-.center{
- display: flex;
- align-items: center;
- justify-content: center;
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.font{
+.font {
     color: rgb(192, 192, 192);
     font-size: 24px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.navbar-container{
+.navbar-container {
     user-select: none;
     display: flex;
     height: 10%;
-    min-height: 60px;
+    max-height: 90px;
+    min-height: 75px;
     width: 100%;
     align-items: center;
     justify-content: space-around;
@@ -23,11 +24,11 @@
     background-color: rgb(0, 134, 152);
     color: white;
     font-size: 20;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 
-.options-container{
+.options-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -38,12 +39,12 @@
 
 }
 
-.option:hover{
+.option:hover {
     cursor: pointer;
-    box-shadow: 0px 3px 0px 0px  rgb(0, 173, 196);
+    box-shadow: 0px 3px 0px 0px rgb(0, 173, 196);
 }
 
-.option{
+.option {
     width: 50%;
     height: 90%;
 
@@ -55,9 +56,9 @@
     transition: box-shadow 300ms, color 300ms;
 }
 
-.activeOption{
+.activeOption {
     width: 50%;
-    height: 90%;
+    height: 85%;
 
     color: white;
     background-color: rgb(0, 173, 196);
@@ -70,14 +71,18 @@
     transition: box-shadow 300ms, color 300ms;
 }
 
-.row-logo{
+.row-logo {
     cursor: pointer;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     width: 20%;
+    min-width: 250px;
 }
 
-.imagem{
-    width: 70px;
+.imagem {
+    max-width: 70px;
+    max-height: 60px;
+    min-width: 50px;
 }

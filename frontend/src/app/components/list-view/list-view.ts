@@ -1,7 +1,7 @@
 import { Component, inject, Input, input, OnInit } from '@angular/core';
 import { DataComponentService } from '../dataComponentService';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle, faEdit, faTrashCan, faEye, faCopy } from '@fortawesome/free-solid-svg-icons';
 import { Dialog } from '@angular/cdk/dialog';
 import { CrudModal } from '../crud-modal/crud-modal';
 
@@ -11,20 +11,26 @@ import { CrudModal } from '../crud-modal/crud-modal';
   templateUrl: './list-view.html',
   styleUrl: './list-view.css',
 })
-export class ListView implements OnInit{
+export class ListView implements OnInit {
 
-    faPlusCircle = faPlusCircle;
-    modal = inject(Dialog);
-    dataComponentService = inject(DataComponentService);
+  faPlusCircle = faPlusCircle;
+  faEdit = faEdit;
+  faTrashCan = faTrashCan;
+  faCopy = faCopy;
+  faEye = faEye;
 
+  modal = inject(Dialog);
+  dataComponentService = inject(DataComponentService);
+  isReadOnly = input<boolean>(false);
 
-  constructor(){
-  }  
-  
-  ngOnInit(): void {
+  constructor() {
   }
 
-  adicionar(){
+  ngOnInit(): void {
+    this.dataComponentService.loadMovimentacaoEstoque();
+  }
+
+  adicionar() {
     this.modal.open(CrudModal, {
       width: "800px",
     })

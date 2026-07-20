@@ -3,6 +3,7 @@ import { Produtos } from "../components/produtos/produtos";
 import { ProdutoTipo } from "./produto";
 import { EntityRecord } from "./record";
 import { environment } from "../../environment";
+import { ListColumnsType } from "./list-columns";
 
 export class MovimentacaoEstoqueTipo {
 
@@ -21,9 +22,9 @@ export const movimentacaoEstoqueRecord : EntityRecord<MovimentacaoEstoqueTipo> =
     titlePlural: "Lançamentos",
     endpoint: environment.movimentacaoEstoqueEndpoint,
     columns : [
-        {field : 'id', label : "ID"},
-        {field : 'tipo', label : "Tipo"},
-        {field : 'quantidade', label : "Quantidade"},
-        {field: 'data', label: "Data"}
+        {field : 'id', label : "ID", type: ListColumnsType.TEXTO},
+        {field : 'tipo', label : "Tipo", type: ListColumnsType.TEXTO},
+        {field : 'quantidade', label : "Quantidade",  type: ListColumnsType.NUMERICO},
+        {field: 'data', label: "Data",  type: ListColumnsType.DATA}
     ],
 }
