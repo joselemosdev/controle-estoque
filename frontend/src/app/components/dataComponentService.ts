@@ -12,11 +12,10 @@ import { movimentacaoRecord } from "../domains/movimentacaoEstoque";
 
 export class DataComponentService{
     
-    constructor(){
-        this.loadMovimentacaoEstoque();
-    }
+    constructor(){  }
 
     public isModalVisible = false;
+    loading = false;
     
     public changeModalVisibility(){
         this.isModalVisible = !this.isModalVisible;
@@ -28,11 +27,11 @@ export class DataComponentService{
     objectsList = signal<any[]>([]);
 
     public loadFornecedores(){
-        
         this.service.doGet(environment.fornecedorEndpoint).subscribe({
             next: fornecedores => {
                 this.objectsList.set(fornecedores);
                 this.record = fornecedorRecord;
+                 this.loading = false;
             },
             error : erro => {
                 console.log(erro);
@@ -45,6 +44,7 @@ export class DataComponentService{
             next: categorias => {
                 this.objectsList.set(categorias);
                 this.record = categoriaRecord;
+                 this.loading = false;
             },
             error : erro => {
                 console.log(erro);
@@ -57,6 +57,7 @@ export class DataComponentService{
             next: produtos => {
                 this.objectsList.set(produtos);
                 this.record = produtoRecord;
+                 this.loading = false;
             },
             error : erro => {
                 console.log(erro);
@@ -69,6 +70,7 @@ export class DataComponentService{
             next: movimentacoes => {
                 this.objectsList.set(movimentacoes);
                 this.record = movimentacaoRecord;
+                this.loading = false;
             },
         error : erro => {
             console.log(erro);

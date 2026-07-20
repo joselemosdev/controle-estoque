@@ -1,4 +1,7 @@
 <div class="list-view-container">
+    @if(dataComponentService.loading){
+        <div><h1>Carregando...</h1></div>
+    } @else {
     <div class="new-row">
         <Button (click)="adicionar()" class="btn-new">Adicionar <fa-icon [icon]="faPlusCircle"/></Button>
     </div>
@@ -24,4 +27,5 @@
             }   
         </div>
     }
+}
 </div>
