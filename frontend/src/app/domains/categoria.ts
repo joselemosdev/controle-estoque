@@ -25,6 +25,6 @@ export const categoriaRecord : EntityRecord<CategoriaTipo> = {
     endpoint: environment.categoriaEndpoint,
     columns : [
         {field : 'id', label : "ID"},
-        {field : 'id', label : "Nome"}
+        {field : 'nome', label : "Nome"}
     ],
 }

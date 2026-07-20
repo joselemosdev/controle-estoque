@@ -35,6 +35,7 @@ export class DataComponentService{
                 this.objectsList.set(fornecedores);
                 this.record = fornecedorRecord;
                  this.loading = false;
+                 console.log(this.record)
             },
             error : erro => {
                 console.log(erro);

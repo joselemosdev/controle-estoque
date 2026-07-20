@@ -5,9 +5,14 @@
     <div class="new-row">
         <Button (click)="adicionar()" class="btn-new">Adicionar <fa-icon [icon]="faPlusCircle"/></Button>
     </div>
-    @for (item of dataComponentService.objectsList() ; track item.id) {
+    @for (item of dataComponentService.objectsList() ; track item) {
         <div class="row-list">
-            @if (dataComponentService.selectedOption() == 'Fornecedores') {
+            @for (column of dataComponentService.record?.columns; track column.field) {
+                    <span><strong>{{column.label}}: </strong>{{item[column.field]}}</span>
+            }
+        </div>
+
+            <!-- @if (dataComponentService.selectedOption() == 'Fornecedores') {
                 <span><strong>ID: </strong>{{item.id}}</span>
                 <span><strong>Nome: </strong>{{item.nome}}</span>
                 <span><strong>CNPJ: </strong>{{item.cnpj}}</span>
@@ -24,8 +29,7 @@
                 <span><strong>Tipo: </strong>{{item.tipo}}</span>
                 <span><strong>Quantidade: </strong>{{item.quantidade}}</span>
                 <span><strong>Produto: </strong>{{item.produto ?? "Não Informado"}}</span>
-            }   
-        </div>
+            }    -->
     }
 }
 </div>
