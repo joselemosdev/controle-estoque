@@ -12,6 +12,12 @@ export class DataComponentService{
         this.loadMovimentacaoEstoque();
     }
 
+    public isModalVisible = false;
+    
+    public changeModalVisibility(){
+        this.isModalVisible = !this.isModalVisible;
+    }
+
     public service = inject(Service);
 
     selectedOption = signal('Lançamentos');
