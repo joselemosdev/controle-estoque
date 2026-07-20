@@ -13,3 +13,7 @@ export class MovimentacaoEstoqueTipo {
         public produto: ProdutoTipo
     ){}
 }
+export const movimentacaoRecord : Record<string, string> = {
+  "titleSingular" : "Lançamento",
+  "titlePlural" : "Lançamentos"
+}

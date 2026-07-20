@@ -13,12 +13,14 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './crud-modal.css',
 })
 export class CrudModal {
-constructor(
-  
-){}
+  constructor(){
+    this.title = this.service.record['titleSingular'];
+    console.log(this.title)
+  }
   faXmark = faXmark;
   dialogRef = inject(DialogRef);
   service = inject(DataComponentService);
+  title = ''; 
 
   get getModalVisibility(){
     

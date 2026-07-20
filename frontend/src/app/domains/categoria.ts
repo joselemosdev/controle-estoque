@@ -9,3 +9,7 @@ export class CategoriaTipo {
         public produtos: Array<CategoriaTipo>
     ){}
 }
+export const categoriaRecord : Record<string, string> = {
+  "titleSingular" : "Categoria",
+  "titlePlural" : "Categorias"
+}

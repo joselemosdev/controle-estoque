@@ -12,3 +12,7 @@ export class FornecedorTipo {
         public produtos: Array<ProdutoTipo>
     ){}
 }
+export const fornecedorRecord : Record<string, string> = {
+  "titleSingular" : "Fornecedor",
+  "titlePlural" : "Fornecedores"
+}
