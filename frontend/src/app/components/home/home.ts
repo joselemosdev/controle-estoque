@@ -17,22 +17,6 @@ export class Home implements OnInit {
   ){}
 
   async ngOnInit() {
-  }
-
-  public loadFornecedores(): void{
-    this.dataComponentService.loadFornecedores();
-  }
-
-
-  public loadCategorias() : void {
-   this.dataComponentService.loadCategorias();
-  }
-
-  public loadProdutos() : void {
-    this.dataComponentService.loadProdutos();
-  }
-
-  public loadMovimentacaoEstoque() : void {
     this.dataComponentService.loadMovimentacaoEstoque();
   }
 

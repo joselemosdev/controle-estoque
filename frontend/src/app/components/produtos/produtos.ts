@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Dialog } from '@angular/cdk/dialog';
+import { Component, inject } from '@angular/core';
+import { CrudModal } from '../crud-modal/crud-modal';
 
 @Component({
   selector: 'app-produtos',
@@ -6,4 +8,8 @@ import { Component } from '@angular/core';
   templateUrl: './produtos.html',
   styleUrl: './produtos.css',
 })
-export class Produtos {}
+export class Produtos {
+
+  
+}
+

@@ -24,8 +24,8 @@ export class Navbar {
    }
 
    public openLancamentos(){
+    this.selectedOption != 'Lançamentos' ? this.dataComponentService.loadMovimentacaoEstoque() : null;
     this.dataComponentService.selectedOption.set('Lançamentos');
-    this.selectedOption != 'Lançamentos' ?  this.dataComponentService.loadMovimentacaoEstoque() : null;
     
    }
   
@@ -42,8 +42,5 @@ export class Navbar {
      this.selectedOption != 'Produtos' ? this.dataComponentService.loadProdutos() : null;
      this.dataComponentService.selectedOption.set('Produtos');
    }
-   public openMovimentacaoHistorico(){
-     this.selectedOption != 'Estoque - Histórico de Movimentações' ?  this.dataComponentService.loadMovimentacaoEstoque() : null;
-     this.dataComponentService.selectedOption.set('Estoque - Histórico de Movimentações');
-   }
+
 }
