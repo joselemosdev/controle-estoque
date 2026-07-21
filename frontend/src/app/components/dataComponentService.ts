@@ -8,80 +8,88 @@ import { produtoRecord } from "../domains/produto";
 import { movimentacaoEstoqueRecord } from "../domains/movimentacaoEstoque";
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 
-export class DataComponentService{
-    
-    constructor(){  }
+export class DataComponentService {
 
-    public isModalVisible = false;
+    constructor() { }
+
+    isModalFieldsReadOnly = false;
     loading = false;
-    
-    public changeModalVisibility(){
-        this.isModalVisible = !this.isModalVisible;
-    }
+    currentObject: any = undefined;
+
 
     public service = inject(Service);
 
-    record? : EntityRecord<any>;
+    record?: EntityRecord<any>;
 
     selectedOption = signal('Lançamentos');
     objectsList = signal<any[]>([]);
 
-    public loadFornecedores(){
+    public loadFornecedores() {
         this.service.doGet(environment.fornecedorEndpoint).subscribe({
             next: fornecedores => {
                 this.objectsList.set(fornecedores);
                 this.record = fornecedorRecord;
-                 this.loading = false;
-                 console.log(this.record)
+                this.loading = false;
+                console.log(this.record)
             },
-            error : erro => {
+            error: erro => {
                 console.log(erro);
             }
         })
     };
 
-    public loadCategorias(){
+    public loadCategorias() {
         this.service.doGet(environment.categoriaEndpoint).subscribe({
             next: categorias => {
                 this.objectsList.set(categorias);
                 this.record = categoriaRecord;
-                 this.loading = false;
+                this.loading = false;
             },
-            error : erro => {
+            error: erro => {
                 console.log(erro);
             }
-        }) 
+        })
     };
 
-    public loadProdutos(){
+    public loadProdutos() {
         this.service.doGet(environment.produtoEndpoint).subscribe({
             next: produtos => {
                 this.objectsList.set(produtos);
                 this.record = produtoRecord;
-                 this.loading = false;
-                 console.log(this.record)
+                this.loading = false;
+                console.log(this.record)
 
             },
-            error : erro => {
+            error: erro => {
                 console.log(erro);
             }
-        }) 
+        })
     }
 
-    public loadMovimentacaoEstoque(){
+    public loadMovimentacaoEstoque() {
         this.service.doGet(environment.movimentacaoEstoqueEndpoint).subscribe({
             next: movimentacoes => {
                 this.objectsList.set(movimentacoes);
                 this.record = movimentacaoEstoqueRecord;
                 this.loading = false;
             },
-        error : erro => {
-            console.log(erro);
-        }
-    }) 
+            error: erro => {
+                console.log(erro);
+            }
+        })
+    }
+
+    public deleById(id: string) {
+        this.service.doDelete(this.record?.endpoint!, id).subscribe({
+            next: deletedItem => {
+                this.objectsList.update(lista =>
+                    lista.filter(item => item.id !== id)
+                );
+            }
+        });
     }
 
 }

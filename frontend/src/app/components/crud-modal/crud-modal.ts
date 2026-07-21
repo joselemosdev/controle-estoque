@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { DataComponentService } from '../dataComponentService';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
@@ -13,34 +13,31 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './crud-modal.css',
 })
 export class CrudModal {
-  constructor(){
-   this.title = this.service.record!.titlePlural.toString();
+  constructor() {
+    this.title = this.service.record!.titlePlural.toString();
   }
+
+
   faXmark = faXmark;
   dialogRef = inject(DialogRef);
   service = inject(DataComponentService);
-  title = ''; 
 
-  get getModalVisibility(){
-    
-    return true;
-    
-    return this.service.isModalVisible;
-  }
+  title = '';
 
-  closeModal(){
+  closeModal() {
     this.dialogRef.close();
   }
 
-  abirModal(){
-    
-  }
-
-  protected cancel(){
+  protected cancel() {
     this.closeModal();
   }
-  protected confirm(){
+  protected confirmSave() {
     this.closeModal();
 
+  }
+
+  protected confirmeDelete() {
+    this.service.deleById
+    this.closeModal();
   }
 }
