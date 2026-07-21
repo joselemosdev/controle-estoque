@@ -34,9 +34,10 @@ public abstract class CompleteCrudController<T> {
         return this.repository.save(updatedEntity);
     }
 
-    @DeleteMapping()
-    public void delete(@RequestBody T entity){
-        this.repository.delete(entity);
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable UUID id){
+        System.out.println("delete by id");
+        this.repository.deleteById(id);
     }
 
 }

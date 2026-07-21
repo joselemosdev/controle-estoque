@@ -31,8 +31,28 @@ export class ListView implements OnInit {
   }
 
   adicionar() {
+    this.openModal('new');
+  }
+
+  deleteItem(item: any) {
+    this.dataComponentService.currentObject = item;
+    this.openModal(item);
+    // this.dataComponentService.deleById(id)
+  }
+
+  editItem(id: string) {
+    console.log(id)
+
+  }
+
+  ViewItem(id: string) {
+    console.log(id)
+  }
+
+  openModal(action: string) {
     this.modal.open(CrudModal, {
       width: "800px",
     })
   }
+
 }
