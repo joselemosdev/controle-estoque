@@ -1,6 +1,4 @@
-import { Dialog } from '@angular/cdk/dialog';
-import { Component, inject } from '@angular/core';
-import { CrudModal } from '../crud-modal/crud-modal';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-produtos',
@@ -10,6 +8,6 @@ import { CrudModal } from '../crud-modal/crud-modal';
 })
 export class Produtos {
 
-  
+
 }
 

@@ -1,11 +1,12 @@
-import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef  } from '@angular/core';
-import { ListView } from '../list-view/list-view';
-import { Navbar } from '../navbar/navbar';
-import { DataComponentService } from '../dataComponentService';
+import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Inventory } from '../../components/inventory/inventory';
+import { DataComponentService } from '../../components/dataComponentService';
+import { Navbar } from '../../components/navbar/navbar';
+import { ListView } from '../../components/list-view/list-view';
 
 @Component({
   selector: 'app-home',
-  imports: [ListView, Navbar],
+  imports: [ListView, Navbar, Inventory],
   standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.css',
@@ -13,18 +14,18 @@ import { DataComponentService } from '../dataComponentService';
 export class Home implements OnInit {
 
   constructor(
-    private dataComponentService : DataComponentService
-  ){}
+    private dataComponentService: DataComponentService
+  ) { }
 
   async ngOnInit() {
     this.dataComponentService.loadMovimentacaoEstoque();
   }
 
-  public selectedOption(){
+  public selectedOption() {
     return this.dataComponentService.selectedOption();
   }
 
-  public objectsList(){
+  public objectsList() {
     return this.dataComponentService.objectsList;
   }
 }
