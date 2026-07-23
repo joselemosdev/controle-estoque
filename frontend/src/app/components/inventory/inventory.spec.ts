@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ManagedList } from './managed-list';
+import { Inventory } from './inventory';
 
-describe('ManagedList', () => {
-  let component: ManagedList;
-  let fixture: ComponentFixture<ManagedList>;
+describe('Inventory', () => {
+  let component: Inventory;
+  let fixture: ComponentFixture<Inventory>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ManagedList],
+      imports: [Inventory],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ManagedList);
+    fixture = TestBed.createComponent(Inventory);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -1,9 +1,9 @@
-import { Component, inject, Input, input, OnInit } from '@angular/core';
-import { DataComponentService } from '../dataComponentService';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faPlusCircle, faEdit, faTrashCan, faEye, faCopy } from '@fortawesome/free-solid-svg-icons';
 import { Dialog } from '@angular/cdk/dialog';
+import { Component, inject, input, OnInit } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faCopy, faEdit, faEye, faPlusCircle, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { CrudModal } from '../crud-modal/crud-modal';
+import { DataComponentService } from '../dataComponentService';
 
 @Component({
   selector: 'app-list-view',

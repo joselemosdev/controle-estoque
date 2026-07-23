@@ -1,0 +1,37 @@
+<div class="card-container">
+    @if (item != undefined) {
+        @for (column of item.columns; track column.field) {
+            <div class="card-content">
+                <p><strong>{{column.label}}</strong></p>
+                <p>{{column.field}}</p>
+            </div>
+        }
+    } @else {
+        <div><p>Não foi possível recuperar informações</p></div>
+    }
+    <div class="card-footer">
+        <div class="controls-container">
+            <fa-icon (click)="deleteItem(item)" id="delete" [icon]="faTrashCan" />
+            <fa-icon (click)="editItem()" id="edit" [icon]="faEdit" />
+            <fa-icon (click)="viewItem()" id="view" [icon]="faEye" />
+        </div>
+    </div>
+</div>
+
+ <!-- <div class="row-list">
+        @for (column of dataComponentService.record?.columns; track column.field) {
+        <span class="item-view">
+            <div class="column-view">
+                <strong>
+                    {{column.label}}:
+                </strong>
+                <i class="field" [title]="`${item[column.field]}`">
+                    {{item[column.field]}}
+                </i>
+            </div>
+            <fa-icon id="copy" [title]="`Copiar ${column.label}`" [icon]="faCopy" />
+        </span>
+        }
+        
+    </div>
+    } -->
