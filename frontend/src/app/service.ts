@@ -1,12 +1,6 @@
 import { HttpClient } from "@angular/common/http";
-import { inject, Inject, Injectable } from "@angular/core";
-import { firstValueFrom, Observable } from "rxjs";
-import { ProdutoTipo } from "./domains/produto";
-import { ThisReceiver } from "@angular/compiler";
-import { FornecedorTipo } from "./domains/fornecedor";
-import { CategoriaTipo } from "./domains/categoria";
-import { MovimentacaoEstoqueTipo } from "./domains/movimentacaoEstoque";
-import { appConfig } from "./app.config";
+import { inject, Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import { environment } from "../environment";
 
 @Injectable({
