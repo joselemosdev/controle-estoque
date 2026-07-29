@@ -1,12 +1,11 @@
-import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
-import { Inventory } from '../../components/inventory/inventory';
+import { Component, OnInit } from '@angular/core';
 import { DataComponentService } from '../../components/dataComponentService';
-import { Navbar } from '../../components/navbar/navbar';
+import { Inventory } from '../../components/inventory/inventory';
 import { ListView } from '../../components/list-view/list-view';
 
 @Component({
   selector: 'app-home',
-  imports: [ListView, Navbar, Inventory],
+  imports: [ListView, Inventory],
   standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.css',

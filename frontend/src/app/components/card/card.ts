@@ -1,7 +1,6 @@
 import { Component, input, OnInit } from '@angular/core';
-import { ListColumns } from '../../domains/list-columns';
-import { faPlusCircle, faEdit, faTrashCan, faEye, faCopy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faCopy, faEdit, faEye, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { EntityRecord } from '../../domains/record';
 
 @Component({
@@ -10,25 +9,28 @@ import { EntityRecord } from '../../domains/record';
   templateUrl: './card.html',
   styleUrl: './card.css',
 })
-export class Card implements OnInit{
+export class Card implements OnInit {
 
-  constructor(){}
+  constructor() { }
 
 
-    ngOnInit(): void {
-        this.item = this.record();
-    }
+  ngOnInit(): void {
+    this.item = this.record();
+  }
 
   record = input<EntityRecord<any>>();
-  item? : EntityRecord<any>;
 
-  faTrashCan = faTrashCan; 
+  item?: EntityRecord<any>;
+
+  faTrashCan = faTrashCan;
   faEdit = faEdit;
   faEye = faEye;
   faCopy = faCopy;
 
 
-  protected deleteItem(item : any){}
-  protected editItem(){}
-  protected viewItem(){}
+  protected deleteItem(item: any) { }
+  protected editItem() { }
+  protected viewItem() { }
+
+
 }

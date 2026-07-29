@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -11,4 +12,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 export class Inventory {
 
   userName = 'José Eduardo';
+  private router = inject(Router);
+
+  navigate(route: string) {
+    this.router.navigate([route]);
+  }
 }

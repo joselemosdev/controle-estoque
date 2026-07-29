@@ -71,14 +71,21 @@
     transition: box-shadow 300ms, color 300ms;
 }
 
+.row-logo:hover {
+    background-color: rgb(0, 173, 196);
+}
+
 .row-logo {
     cursor: pointer;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    border-radius: 5px;
     width: 20%;
     min-width: 250px;
+
+    transition: background-color 200ms;
 }
 
 .imagem {
