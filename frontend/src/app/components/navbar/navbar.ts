@@ -1,6 +1,6 @@
-import { ChangeDetectorRef, Component, Inject, NgModule } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataComponentService } from '../dataComponentService';
-import { NgClass } from '@angular/common';
 
 
 @Component({
@@ -12,10 +12,15 @@ import { NgClass } from '@angular/common';
 })
 export class Navbar {
 
+  router = inject(Router);
   constructor(
     private dataComponentService: DataComponentService,
 
   ) { }
+
+  loadHome() {
+    this.router.navigate([""]);
+  }
 
   get selectedOption() {
     return this.dataComponentService.selectedOption();

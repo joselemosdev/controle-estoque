@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { DataComponentService } from '../../components/dataComponentService';
 import { Inventory } from '../../components/inventory/inventory';
 import { ListView } from '../../components/list-view/list-view';
-import { Navbar } from '../../components/navbar/navbar';
 
 @Component({
   selector: 'app-home',
-  imports: [ListView, Navbar, Inventory, RouterOutlet],
+  imports: [ListView, Inventory],
   standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.css',
