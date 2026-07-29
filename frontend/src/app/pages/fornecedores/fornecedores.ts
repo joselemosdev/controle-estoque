@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { CrudModal } from "../../components/crud-modal/crud-modal";
 
 @Component({
   selector: 'app-fornecedores',
-  imports: [],
+  imports: [CrudModal],
   templateUrl: './fornecedores.html',
   styleUrl: './fornecedores.css',
 })
