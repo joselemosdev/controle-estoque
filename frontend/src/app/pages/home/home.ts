@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { DataComponentService } from '../../components/dataComponentService';
 import { Inventory } from '../../components/inventory/inventory';
-import { ListView } from '../../components/list-view/list-view';
 
 @Component({
   selector: 'app-home',
-  imports: [ListView, Inventory],
+  imports: [Inventory],
   standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.css',
@@ -17,7 +16,7 @@ export class Home implements OnInit {
   ) { }
 
   async ngOnInit() {
-    this.dataComponentService.loadMovimentacaoEstoque();
+    // this.dataComponentService.loadMovimentacaoEstoque();
   }
 
   public selectedOption() {

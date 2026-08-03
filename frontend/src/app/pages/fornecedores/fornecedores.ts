@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
-import { CrudModal } from "../../components/crud-modal/crud-modal";
+import { Component, inject, OnInit } from '@angular/core';
+import { DataComponentService } from '../../components/dataComponentService';
+import { ListView } from '../../components/list-view/list-view';
 
 @Component({
   selector: 'app-fornecedores',
-  imports: [CrudModal],
+  imports: [ListView],
   templateUrl: './fornecedores.html',
   styleUrl: './fornecedores.css',
 })
-export class Fornecedores {
+export class Fornecedores implements OnInit {
+  private dataService = inject(DataComponentService);
 
+  constructor() { }
+
+  public ngOnInit(): void {
+    this.dataService.loadCategorias();
+    this.dataService.selectedOption.set("Fornecedores")
+  }
 }
