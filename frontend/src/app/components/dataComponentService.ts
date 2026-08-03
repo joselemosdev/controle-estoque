@@ -1,11 +1,11 @@
 import { inject, Injectable, signal } from "@angular/core";
-import { Service } from "../service";
 import { environment } from "../../environment";
-import { EntityRecord } from "../domains/record";
-import { fornecedorRecord } from "../domains/fornecedor";
 import { categoriaRecord } from "../domains/categoria";
-import { produtoRecord } from "../domains/produto";
+import { fornecedorRecord } from "../domains/fornecedor";
 import { movimentacaoEstoqueRecord } from "../domains/movimentacaoEstoque";
+import { produtoRecord } from "../domains/produto";
+import { EntityRecord } from "../domains/record";
+import { Service } from "../service";
 
 @Injectable({
     providedIn: 'root',
@@ -24,7 +24,7 @@ export class DataComponentService {
 
     record?: EntityRecord<any>;
 
-    selectedOption = signal('Lançamentos');
+    selectedOption = signal('');
     objectsList = signal<any[]>([]);
 
     public loadFornecedores() {
@@ -33,7 +33,6 @@ export class DataComponentService {
                 this.objectsList.set(fornecedores);
                 this.record = fornecedorRecord;
                 this.loading = false;
-                console.log(this.record)
             },
             error: erro => {
                 console.log(erro);

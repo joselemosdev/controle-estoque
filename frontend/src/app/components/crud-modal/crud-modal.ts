@@ -1,14 +1,13 @@
-import { Component, inject, input } from '@angular/core';
-import { DataComponentService } from '../dataComponentService';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CommonModule } from '@angular/common';
 import { DialogRef } from '@angular/cdk/dialog';
+import { Component, inject } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { DataComponentService } from '../dataComponentService';
 
 @Component({
   selector: 'app-crud-modal',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [FontAwesomeModule],
   templateUrl: './crud-modal.html',
   styleUrl: './crud-modal.css',
 })

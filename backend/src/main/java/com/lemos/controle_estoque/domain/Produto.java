@@ -12,6 +12,15 @@ import java.util.UUID;
 @Data
 public class Produto {
 
+    public Produto(int estoqueMinimo){
+        if(estoqueMinimo < 1){
+            throw new IllegalArgumentException("Produto deve ter ao menos uma unidade");
+        }
+        if(estoqueMinimo > 999){
+            throw new IllegalArgumentException("Produto deve ter no máximo 1 mil unidades");
+        }
+        this.estoqueMinimo = estoqueMinimo;
+    }
 
     @Id
     @UuidGenerator

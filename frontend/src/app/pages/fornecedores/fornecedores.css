@@ -1,6 +1,11 @@
-.fornecedor-container{
-    width: 200px;
-    height: 100px;
+.fornecedor-container {
+    width: 100%;
+    height: 80%;
+}
 
-    background-color: rgb(255, 255, 255);
+.fornecedor-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
 }

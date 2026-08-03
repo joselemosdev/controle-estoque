@@ -7,3 +7,11 @@ body {
     /* background-color: rgb(52, 52, 54); */
     background-color: none;
 }
+
+
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
