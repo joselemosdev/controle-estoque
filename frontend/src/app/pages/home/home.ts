@@ -15,9 +15,11 @@ export class Home implements OnInit {
     private dataComponentService: DataComponentService
   ) { }
 
-  async ngOnInit() {
-    // this.dataComponentService.loadMovimentacaoEstoque();
+
+  ngOnInit(): void {
+    this.dataComponentService.selectedOption.set('');
   }
+
 
   public selectedOption() {
     return this.dataComponentService.selectedOption();

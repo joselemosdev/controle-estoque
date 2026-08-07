@@ -16,7 +16,8 @@ export class Navbar {
   constructor(
     private dataComponentService: DataComponentService,
 
-  ) { }
+  ) {
+  }
 
   loadHome() {
     this.router.navigate([""]);

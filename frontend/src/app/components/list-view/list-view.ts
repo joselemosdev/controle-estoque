@@ -27,7 +27,6 @@ export class ListView implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataComponentService.loadMovimentacaoEstoque();
   }
 
   adicionar() {
@@ -53,6 +52,10 @@ export class ListView implements OnInit {
     this.modal.open(CrudModal, {
       width: "800px",
     })
+  }
+
+  openModalWithItem(item: any) {
+    console.log("item :::" + JSON.stringify(item));
   }
 
 }
