@@ -14,7 +14,7 @@ export class Fornecedores implements OnInit {
   constructor() { }
 
   public ngOnInit(): void {
-    this.dataService.loadCategorias();
+    this.dataService.loadFornecedores();
     this.dataService.selectedOption.set("Fornecedores")
   }
 }

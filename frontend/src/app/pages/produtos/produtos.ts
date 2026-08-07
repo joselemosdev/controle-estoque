@@ -16,7 +16,7 @@ export class Produtos implements OnInit {
 
   public ngOnInit(): void {
     this.dataService.selectedOption.set("Produtos");
-    this.dataService.loadCategorias();
+    this.dataService.loadProdutos();
   }
 }
 
