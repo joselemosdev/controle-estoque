@@ -4,9 +4,9 @@
                 [icon]="faPlusCircle" /></Button>
     </div>
     <div class="list-view-container">
-        @if(dataComponentService.loading){
+        @if(dataComponentService.objectsList().length == 0){
         <div>
-            <h1>Carregando...</h1>
+            <img src="assets/empty.png" height="200" alt="">
         </div>
         } @else {
         <div class="row-list" style="justify-content: space-between; border: none;">
