@@ -9,19 +9,28 @@
             <h1>Carregando...</h1>
         </div>
         } @else {
+        <div class="row-list" style="justify-content: space-between; border: none;">
+            @for (col of dataComponentService.record?.columns; track col) {
+            <div class="column-view">
+                <strong>
+                    {{col.label}}
+                </strong>
+            </div>
+            }
+            <strong class="controls-container">AÇÕES</strong>
+        </div>
         @for (item of dataComponentService.objectsList() ; track item) {
         <div (click)="openModalWithItem(item)" class="row-list">
             @for (column of dataComponentService.record?.columns; track column.field) {
             <span class="item-view">
                 <div class="column-view">
-                    <strong>
-                        {{column.label}}:
-                    </strong>
                     <i class="field" [title]="`${item[column.field]}`">
                         {{item[column.field]}}
                     </i>
                 </div>
+                @if (column.label == "ID") {
                 <fa-icon id="copy" [title]="`Copiar ${column.label}`" [icon]="faCopy" />
+                }
             </span>
             }
             <div class="controls-container">

@@ -27,13 +27,18 @@
     gap: 50px;
     width: 100%;
     height: 30px;
-    color: white;
+    color: black;
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 8px;
     padding-top: 8px;
     border-bottom: 1px solid rgb(218, 218, 218);
     transition: background-color 150ms;
+}
+
+#acoes {
+    font-family: 'Courier New', Courier, monospace;
+
 }
 
 .new-row {
@@ -70,13 +75,14 @@
 .column-view {
     background-color: white;
     color: black;
-    width: fit-content;
-    max-width: 300px;
-    min-width: 100px;
+    /* width: fit-content; */
+    /* max-width: 300px; */
+    width: 200px;
     height: 100%;
     padding: 5px;
     align-items: center;
     display: flex;
+    justify-content: start;
 }
 
 .item-view {
@@ -85,8 +91,7 @@
     justify-content: start;
     align-items: center;
     height: 100%;
-    max-width: 350px;
-    min-width: 250px;
+    width: 200px;
 }
 
 .field {
