@@ -1,5 +1,5 @@
-import { DialogRef } from '@angular/cdk/dialog';
-import { Component, inject } from '@angular/core';
+import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
+import { Component, Inject, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { DataComponentService } from '../dataComponentService';
@@ -12,7 +12,9 @@ import { DataComponentService } from '../dataComponentService';
   styleUrl: './crud-modal.css',
 })
 export class CrudModal {
-  constructor() {
+  constructor(
+    @Inject(DIALOG_DATA) public data: any,
+  ) {
     this.title = this.service.record!.titlePlural.toString();
   }
 
@@ -35,8 +37,8 @@ export class CrudModal {
 
   }
 
-  protected confirmeDelete() {
-    this.service.deleById
+  protected confirmDelete() {
+    this.service.deleById(this.data.item.id)
     this.closeModal();
   }
 }

@@ -22,20 +22,25 @@ export class ListView implements OnInit {
   modal = inject(Dialog);
   dataComponentService = inject(DataComponentService);
   isReadOnly = input<boolean>(false);
+  copyBox = document.getElementById("copy");
 
   constructor() {
   }
 
   ngOnInit(): void {
+
   }
 
   adicionar() {
     this.openModal('new');
   }
 
+  copyId(id: string) {
+    navigator.clipboard.writeText(id);
+  }
+
   deleteItem(item: any) {
-    this.dataComponentService.currentObject = item;
-    this.openModal(item);
+    this.openModal('delete');
     // this.dataComponentService.deleById(id)
   }
 
@@ -44,18 +49,27 @@ export class ListView implements OnInit {
 
   }
 
-  ViewItem(id: string) {
-    console.log(id)
-  }
-
-  openModal(action: string) {
+  ViewItem(item: any) {
     this.modal.open(CrudModal, {
-      width: "800px",
+      width: '800px',
+      data: {
+        Action: 'view',
+        item: item
+      }
     })
   }
 
-  openModalWithItem(item: any) {
-    console.log("item :::" + JSON.stringify(item));
+  openModal(item: any, action: string) {
+    this.modal.open(CrudModal, {
+      width: "800px",
+      data: {
+        action: action
+      }
+    })
+  }
+
+  openModalWithItem(item: string) {
+
   }
 
 }

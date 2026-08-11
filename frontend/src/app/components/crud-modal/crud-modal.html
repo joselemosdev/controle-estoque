@@ -1,6 +1,10 @@
 <div class="modal-container">
     <div class="modal-header">
+        @if (data.action == 'delete') {
+        <p id="title">Exclusão de {{title}}</p>
+        } @else {
         <p id="title">Cadastro de {{title}}</p>
+        }
         <button id="close" (click)="closeModal()" class="btn-close"> <fa-icon [icon]="faXmark"></fa-icon></button>
     </div>
     <div class="modal-content">
@@ -8,6 +12,10 @@
     </div>
     <div class="modal-footer">
         <button id="cancel" (click)="cancel()" class="btn-footer">Cancelar</button>
+        @if (data.action == 'delete') {
+        <button id="delete" (click)="confirmDelete()" class="btn-footer">Deletar</button>
+        } @else {
         <button id="confirm" (click)="confirmSave()" class="btn-footer">Salvar</button>
+        }
     </div>
 </div>
