@@ -3,7 +3,7 @@
     align-items: center;
     flex-direction: column;
     background-color: white;
-    color: white;
+    color: black;
     border-radius: 8px;
     width: 800px;
     height: 70vh;
@@ -24,6 +24,7 @@
     min-height: 80px;
     width: 100%;
     font-size: 25px;
+    color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(0, 208, 235);
 }
@@ -52,6 +53,13 @@
     min-height: 150px;
     width: 95%;
     margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 0px 3px 0px grey;
+    border-radius: 4px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 
@@ -81,10 +89,37 @@
 
 #cancel {
     background-color: none;
-    color: black;
 }
 
 #confirm {
     background-color: rgb(0, 190, 215);
     color: rgb(255, 255, 255);
+}
+
+#delete {
+    background-color: rgb(226, 1, 1);
+    color: rgb(255, 255, 255);
+}
+
+.itemField:active {
+    color: rgb(127, 173, 179);
+}
+
+
+.itemField {
+    margin: 10px;
+    width: 45%;
+    height: 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(94, 93, 93);
+}
+
+#delete-massage {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+}
+
+#label {
+    color: rgb(0, 144, 163);
+    font-size: 22px;
 }
