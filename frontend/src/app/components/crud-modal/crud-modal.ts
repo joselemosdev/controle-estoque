@@ -30,12 +30,17 @@ export class CrudModal implements OnInit {
   }
 
   ngOnInit(): void {
-    this.defineItemFields();
+    if (this.data.action != 'new') {
+      this.defineItemFields();
+      return;
+    }
+    this.defineItemFieldsAsEmpty();
   }
 
   private defineItemFields() {
     //insere primeiro o id e depois os demais campos
     this.itemFields.set('ID', this.data.item.id);
+
     const formControls: Record<string, FormControl> = {};
 
 
@@ -54,6 +59,10 @@ export class CrudModal implements OnInit {
     if (this.data.action == "view" || this.data.action == "delete") {
       this.isReadOnly = true;
     }
+  }
+
+  private defineItemFieldsAsEmpty() {
+
   }
 
 
@@ -79,7 +88,7 @@ export class CrudModal implements OnInit {
       console.log('values')
       console.log(this.crudForm.value)
       console.log(this.itemFields)
-      this.saveEdit(this.itemFields);
+      this.saveEdit(this.crudForm.value);
       this.closeModal();
       return;
     }

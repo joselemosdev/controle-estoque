@@ -40,4 +40,9 @@ public abstract class CompleteCrudController<T> {
         this.repository.deleteById(id);
     }
 
+    @GetMapping("/schema")
+    public Class<T> getFields(){
+        final entity Class = this.repository.getClass();
+    }
+
 }

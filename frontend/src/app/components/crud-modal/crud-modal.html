@@ -16,17 +16,11 @@
             @for (field of itemFields; track field[0]) {
             <mat-form-field class="col-md-6" class="itemField">
                 <mat-label [id]="field[0]"><b>{{field[0].toUpperCase()}}</b></mat-label>
-                <input matInput [id]=field[0] [disabled]="isReadOnly || field[0] == 'ID'"
+                <input matInput [id]=field[0] [readonly]="isReadOnly || field[0] == 'ID'"
                     [formControlName]="field[0].toLocaleLowerCase()">
 
             </mat-form-field>
             }
-            <!-- @for (item of crudForm.d; track item[0]) {
-            <mat-form-field class=" col-md-6" class="itemField">
-                <mat-label id="label"><b>{{item[0]}}</b></mat-label>
-                <input matInput [id]="item[0]" [disabled]="isReadOnly || item[0] == 'ID'" [value]="item[1]">
-            </mat-form-field>
-            } -->
         </div>
         <div class="modal-footer">
             <button id="cancel" type="reset" (click)="cancel()" class="btn-footer">Cancelar</button>

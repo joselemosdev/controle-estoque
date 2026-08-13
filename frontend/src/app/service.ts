@@ -22,8 +22,10 @@ export class Service {
         return this.http.post<any>(this.URL + endpoint, data);
     }
 
-    public doUpdate(endpoint: string, data: any) {
-        return this.http.put<any>(this.URL + endpoint, data)
+    public doUpdate(endpoint: string, data: any): Observable<any> {
+        console.log('put')
+        console.log(data)
+        return this.http.put<any>(this.URL + endpoint, data);
     };
 
     public doDelete(endpoint: string, id: string): Observable<any> {
