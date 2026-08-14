@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrudModal } from './crud-modal';
+import { CrudModal } from './exclude-modal';
 
 describe('CrudModal', () => {
   let component: CrudModal;
