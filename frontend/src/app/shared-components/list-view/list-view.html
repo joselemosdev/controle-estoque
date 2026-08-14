@@ -1,7 +1,8 @@
 <div class="component-container">
-    <div class="new-row">
-        <Button (click)="adicionar()" class="btn-new">ADD {{dataComponentService.record?.titleSingular}} <fa-icon
-                [icon]="faPlusCircle" /></Button>
+    <div class="action-row">
+        <Button class="btn" (click)="backScreen()"><fa-icon id="back"
+                [icon]="faBackward" /><strong>Voltar</strong></Button>
+        <Button class="btn" (click)="openNewScreen()">Novo<fa-icon [icon]="faPlusCircle" /></Button>
     </div>
     <div class="list-view-container">
         @if(dataComponentService.objectsList().length == 0){

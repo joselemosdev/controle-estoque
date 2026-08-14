@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { DataComponentService } from '../../components/dataComponentService';
-import { ListView } from "../../components/list-view/list-view";
+import { DataComponentService } from '../../shared-components/dataComponentService';
+import { ListView } from "../../shared-components/list-view/list-view";
 
 @Component({
   selector: 'app-produtos',

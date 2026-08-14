@@ -41,35 +41,33 @@
 
 }
 
-.new-row {
+.action-row {
     display: flex;
     flex-direction: row;
     width: 80%;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 }
 
-.btn-new:active {
-    background-color: rgba(234, 253, 255, 0.534);
-    transition: background-color 100ms;
-}
-
-.btn-new:hover {
+.btn {
     cursor: pointer;
-}
-
-.btn-new {
     border: none;
     height: 50px;
     width: 180px;
-    color: rgb(0, 173, 196);
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 13px;
     font-weight: 800;
     text-transform: uppercase;
+    color: rgb(0, 173, 196);
     border-bottom: 1px solid rgb(0, 173, 196);
     background-color: white;
     transition: background-color 500ms;
+}
+
+.btn:active {
+    background-color: rgba(234, 253, 255, 0.534);
+    transition: background-color 100ms;
+
 }
 
 .column-view {
