@@ -47,13 +47,13 @@ export class ListView implements OnInit {
     navigator.clipboard.writeText(id);
   }
 
-  public editItem(item: any) {
-    this.router.navigate([`/${this.newRoute()}`]);
-    // this.openModal('edit', item);
+  public editItem(id: string) {
+    console.log('nova rota')
+    this.router.navigate([`/${this.newRoute()}/${id}/edit`]);
   }
 
-  public viewItem(item: any) {
-    this.router.navigate([`/${this.newRoute()}`]);
+  public viewItem(id: string) {
+    this.router.navigate([`/${this.newRoute()}/${id}/view`]);
   }
 
   public deleteItem(id: string) {

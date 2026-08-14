@@ -36,8 +36,8 @@
             }
             <div class="controls-container">
                 <fa-icon (click)="deleteItem(item.id)" id="delete" [icon]="faTrashCan" />
-                <fa-icon (click)="editItem(item)" id="edit" [icon]="faEdit" />
-                <fa-icon (click)="viewItem(item)" id="view" [icon]="faEye" />
+                <fa-icon (click)="editItem(item.id)" id="edit" [icon]="faEdit" />
+                <fa-icon (click)="viewItem(item.id)" id="view" [icon]="faEye" />
             </div>
         </div>
         }

@@ -14,14 +14,18 @@ export const routes: Routes = [
     { path: "produtos", component: Produtos },
     { path: "produtos/new", component: ProdutoForm },
     { path: "produtos/:id/edit", component: ProdutoForm },
+    { path: "produtos/:id/view", component: ProdutoForm },
 
     // Categorias
     { path: "categorias", component: Categorias },
     { path: "categorias/new", component: CategoriaForm },
     { path: "categorias/:id/edit", component: CategoriaForm },
+    { path: "categorias/:id/view", component: CategoriaForm },
+
 
     // Fornecedores
     { path: "fornecedores", component: Fornecedores },
     { path: "fornecedores/new", component: FornecedorForm },
     { path: "fornecedores/:id/edit", component: FornecedorForm },
+    { path: "fornecedores/:id/view", component: FornecedorForm },
 ];
