@@ -1,4 +1,19 @@
-<div [class]="'custom-field'" [style.grid-column]="'span ' + width()">
-    <p><strong>{{label()}}</strong></p>
-    <p>{{content()}}</p>
+@if (fieldType() == 'spaco') {
+<div [style.grid-column]="'span ' + width()"></div>
+}
+
+@if (fieldType() == 'texto') {
+<div class="box" [style.grid-column]="'span ' + width()">
+    <p class="label"><strong>{{label()}}</strong></p>
+    <div [class]="'custom-field'">
+        <p class="content">
+            {{content()}}
+
+            @if (label() == "ID" || label() == 'id') {
+            <fa-icon id="copy" (click)="copyId()" [icon]="faCopy" />
+            }
+        </p>
+
+    </div>
 </div>
+}

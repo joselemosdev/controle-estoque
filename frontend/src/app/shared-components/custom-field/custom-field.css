@@ -1,5 +1,35 @@
 .custom-field {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: rgb(29, 29, 29);
     height: 50px;
-    background-color: blue;
-    color: rgb(142, 142, 226);
+    min-height: fit-content;
+    border-radius: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: rgb(241, 241, 241);
+}
+
+.label {
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-size: 18px;
+    color: rgb(22, 22, 22);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.content {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+
+}
+
+#copy {
+    cursor: pointer;
+    margin-left: 5px;
+    color: rgb(73, 73, 73);
 }
