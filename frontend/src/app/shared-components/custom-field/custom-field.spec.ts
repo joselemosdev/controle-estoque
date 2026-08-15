@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrudModal } from './crud-modal';
+import { CustomField } from './custom-field';
 
-describe('CrudModal', () => {
-  let component: CrudModal;
-  let fixture: ComponentFixture<CrudModal>;
+describe('CustomField', () => {
+  let component: CustomField;
+  let fixture: ComponentFixture<CustomField>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CrudModal],
+      imports: [CustomField],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CrudModal);
+    fixture = TestBed.createComponent(CustomField);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

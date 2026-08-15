@@ -1,7 +1,8 @@
 <div class="component-container">
-    <div class="new-row">
-        <Button (click)="adicionar()" class="btn-new">ADD {{dataComponentService.record?.titleSingular}} <fa-icon
-                [icon]="faPlusCircle" /></Button>
+    <div class="action-row">
+        <Button class="btn" (click)="backScreen()"><fa-icon id="back"
+                [icon]="faBackward" /><strong>Voltar</strong></Button>
+        <Button class="btn" (click)="openNewScreen()">Novo<fa-icon [icon]="faPlusCircle" /></Button>
     </div>
     <div class="list-view-container">
         @if(dataComponentService.objectsList().length == 0){
@@ -34,9 +35,9 @@
             </span>
             }
             <div class="controls-container">
-                <fa-icon (click)="deleteItem(item)" id="delete" [icon]="faTrashCan" />
-                <fa-icon (click)="editItem(item)" id="edit" [icon]="faEdit" />
-                <fa-icon (click)="ViewItem(item)" id="view" [icon]="faEye" />
+                <fa-icon (click)="deleteItem(item.id)" id="delete" [icon]="faTrashCan" />
+                <fa-icon (click)="editItem(item.id)" id="edit" [icon]="faEdit" />
+                <fa-icon (click)="viewItem(item.id)" id="view" [icon]="faEye" />
             </div>
         </div>
         }

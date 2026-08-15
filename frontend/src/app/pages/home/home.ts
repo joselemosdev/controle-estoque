@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataComponentService } from '../../components/dataComponentService';
-import { Inventory } from '../../components/inventory/inventory';
+import { DataComponentService } from '../../shared-components/dataComponentService';
+import { Inventory } from '../../shared-components/inventory/inventory';
 
 @Component({
   selector: 'app-home',

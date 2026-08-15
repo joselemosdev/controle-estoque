@@ -80,6 +80,22 @@ export class DataComponentService {
         })
     }
 
+    public saveNew(data: any) {
+        this.service.doSave(this.record?.endpoint!, data).subscribe({
+            next: savedItem => {
+                console.log(savedItem + 'salvo!')
+            }
+        });
+    }
+
+    public update(data: any) {
+        this.service.doUpdate(this.record?.endpoint!, data).subscribe({
+            next: updatedItem => {
+                console.log("Updated Item" + updatedItem)
+            }
+        });
+    }
+
     public deleById(id: string) {
         this.service.doDelete(this.record?.endpoint!, id).subscribe({
             next: deletedItem => {

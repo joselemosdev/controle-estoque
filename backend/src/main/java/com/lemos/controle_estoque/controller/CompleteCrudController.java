@@ -39,5 +39,4 @@ public abstract class CompleteCrudController<T> {
         System.out.println("delete by id");
         this.repository.deleteById(id);
     }
-
 }
