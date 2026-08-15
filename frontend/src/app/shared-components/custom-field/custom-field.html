@@ -1,4 +1,4 @@
-<div [class]="'custom-field'" [style.width.%]="width() * 100 / 12">
+<div [class]="'custom-field'" [style.grid-column]="'span ' + width()">
     <p><strong>{{label()}}</strong></p>
     <p>{{content()}}</p>
 </div>
