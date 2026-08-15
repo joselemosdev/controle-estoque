@@ -15,6 +15,7 @@ export class CustomField {
   label = input<string>();
   content = input<string>();
   fieldType = input<CustomFieldType>();
+  width = input(0);
 
 
 }
