@@ -1,4 +1,17 @@
-<div [class]="'custom-field'" [style.grid-column]="'span ' + width()">
-    <p><strong>{{label()}}</strong></p>
-    <p>{{content()}}</p>
+@if (fieldType() == 'espaco') {
+<div [style.grid-column]="'span ' + width()"></div>
+} @else {
+<div class="box" [style.grid-column]="'span ' + width()">
+    <p class="label"><strong>{{ label() }}</strong></p>
+
+    <div class="custom-field-wrapper">
+        @if (fieldType() == 'texto') {
+        <input type="text" class="custom-input" [value]="content()" (input)="onInput($event)" />
+
+        @if (label()?.toLowerCase() === 'id') {
+        <fa-icon id="copy" class="copy-icon" (click)="copyId()" [icon]="faCopy" />
+        }
+        }
+    </div>
 </div>
+}
