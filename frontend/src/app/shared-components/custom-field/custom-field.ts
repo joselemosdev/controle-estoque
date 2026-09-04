@@ -3,7 +3,7 @@ import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
 export type CustomFieldType =
-  'texto' | 'data' | 'numero' | 'valor' | 'img' | 'email' | 'telefone' | 'spaco';
+  'texto' | 'data' | 'numero' | 'valor' | 'img' | 'email' | 'telefone' | 'espaco';
 
 @Component({
   selector: 'app-custom-field',
@@ -22,8 +22,15 @@ export class CustomField {
   fieldType = input<CustomFieldType>();
   imgPath = input<string>();
   width = input();
+  readOnly = input<boolean>(false);
   gridColumn = computed(() => `span ${this.width()}`);
 
+  onInput(event: Event) {
+    const value = (event.target as HTMLInputElement).value;
+
+    // faça aqui o que precisa com o valor digitado
+    console.log(value);
+  }
 
   public copyId() {
 
